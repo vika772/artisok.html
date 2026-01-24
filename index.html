@@ -1,71 +1,104 @@
 <!DOCTYPE html>
 <html lang="ro">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Loc de Joacă & Cafenea</title>
-</head>
-<body>
-    <header>
-        <div class="logo">
-            <strong>LOGO JOC</strong>
+    <link rel="stylesheet" href="./styles/normalize.min.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header__wrapper">
+          <div class="header__logo logo">
+            <strong class="logo__text">LOGO JOC</strong>
+          </div>
+
+          <nav class="header__nav nav">
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a href="#hero" class="nav__link">Despre noi</a>
+              </li>
+              <li class="nav__item">
+                <a href="#menu" class="nav__link">Meniu</a>
+              </li>
+              <li class="nav__item">
+                <a href="#contacte" class="nav__link">Contacte</a>
+              </li>
+            </ul>
+            <span class="nav__languages">🌐 RO / EN / RU</span>
+          </nav>
         </div>
-        <nav>
-            <a href="#desprenoi">Despre noi</a>
-            <a href="#meniu">Meniu</a>
-            <a href="#contacte">Contacte</a>
-            <span>🌐 RO / EN / RU</span>
-        </nav>
+      </div>
     </header>
 
-    <main>
-        <section id="desprenoi">
-            <h1>DESPRE NOI</h1>
-            <div class="galerie">
-                <img src="https://via.placeholder.com" alt="Zona de joaca">
-                <img src="https://via.placeholder.com" alt="Zona cafenea">
-            </div>
-            <p>Locul nostru de joacă este un spațiu prietenos și sigur, creat special pentru bucuria copiilor 
-            și relaxarea părinților. Cei mici se pot distra în voie într-un mediu colorat, plin de jocuri
-            interactive, tobogane, căsuțe și zone de creativitate, atent amenajate pentru diferite grupe 
-            de vârstă. Siguranța și confortul copiilor sunt prioritare, iar echipamentele respectă cele
-            mai înalte standarde de calitate.</p>
-            <p>În același timp, părinții se pot bucura de momente de liniște în cafeneaua cochetă integrată în spațiu.
-            Aici pot savura o cafea aromată, ceaiuri, băuturi răcoritoare sau gustări delicioase, având mereu copiii
-            la vedere.</p>
-        </section>
+    <main class="main-content">
+      <section class="hero" id="hero">
+        <div class="container">
+          <div class="hero__content">
+            <h1 class="hero__title">DESPRE NOI</h1>
+          </div>
 
-        <section id="meniu">
-            <h2>MENIU CAFENEALĂ</h2>
-            <div class="grid-meniu">
-                <div class="item-meniu">
-                    <h3>Băuturi calde</h3>
-                    <p>Espresso - 25 MDL</p>
-                    <p>Cappuccino - 35 MDL</p>
-                </div>
-                <div class="item-meniu">
-                    <h3>Gustări</h3>
-                    <p>Croissant - 20 MDL</p>
-                    <p>Biscuiți casă - 15 MDL</p>
-                </div>
-                <div class="item-meniu">
-                    <h3>Pentru Copii</h3>
-                    <p>Suc natural - 15 MDL</p>
-                    <p>Brioșe - 18 MDL</p>
-                </div>
-            </div>
-        </section>
+          <div class="hero__gallery">
+            <img src="https://via.placeholder.com" alt="Zona de joaca" class="hero__image"/>
+            <img src="https://via.placeholder.com" alt="Zona cafenea" class="hero__image"/>
+          </div>
+
+          <div class="hero__description">
+            <p class="hero__text">
+              Locul nostru de joacă este un spațiu prietenos și sigur, creat
+              special pentru bucuria copiilor și relaxarea părinților. Cei mici
+              se pot distra în voie într-un mediu colorat...
+            </p>
+            <p class="hero__text">
+              În același timp, părinții se pot bucura de momente de liniște în
+              cafeneaua cochetă...
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="menu" id="menu">
+        <div class="container">
+          <h2 class="menu__title">MENIU CAFENEALĂ</h2>
+
+          <div class="menu__grid">
+            <article class="menu__item card">
+              <h3 class="card__title">Băuturi calde</h3>
+              <p class="card__info">Espresso - 25 MDL</p>
+              <p class="card__info">Cappuccino - 35 MDL</p>
+            </article>
+
+            <article class="menu__item card">
+              <h3 class="card__title">Gustări</h3>
+              <p class="card__info">Croissant - 20 MDL</p>
+              <p class="card__info">Biscuiți casă - 15 MDL</p>
+            </article>
+
+            <article class="menu__item card">
+              <h3 class="card__title">Pentru Copii</h3>
+              <p class="card__info">Suc natural - 15 MDL</p>
+              <p class="card__info">Brioșe - 18 MDL</p>
+            </article>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <footer id="contacte">
-        <address>
-            <p>📍 Adresa: Str. Exemplului 1, Chișinău</p>
-            <p>📞 Contact: +373 22 222 222</p>
-            <p>📧 Email: <a href="mailto:info@exemplu.md">info@exemplu.md</a></p>
+    <footer class="footer" id="contacte">
+      <div class="container">
+        <address class="footer__address contact-info">
+          <p class="contact-info__item">
+            📍 Adresa: Str. Exemplului 1, Chișinău
+          </p>
+          <p class="contact-info__item">📞 Contact: +373 22 222 222</p>
+          <p class="contact-info__item">
+            📧 Email:
+            <a href="mailto:info@exemplu.md" class="contact-info__link">info@exemplu.md</a>
+          </p>
         </address>
-        <div style="margin-top: 10px;">
-            <a href="#">Telegram</a> | <a href="#">Instagram</a> | <a href="#">Facebook</a>
-        </div>
+      </div>
     </footer>
-</body>
+  </body>
 </html>
