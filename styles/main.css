@@ -1,0 +1,18 @@
+:root {
+	--open-sans: 'Open Sans', sans-serif;
+	--nunito-sans: 'Nunito Sans', sans-serif;
+
+    /* Brand Colors */
+    --color-primary: #76594B;   
+    --color-secondary: #AF9270;  
+    
+    /* UI Colors */
+    --color-bg-main: #FADAB3;   
+    --color-surface: #BECCB0;   
+    
+    /* Text Colors */
+    --text-main: #76594B;
+    --text-muted: #AF9270;  
+
+	--tr: 0.2s;
+}
