@@ -101,3 +101,22 @@ if (slides.length > 1) {
     setSlide(currentIndex + 1);
   }, 5000);
 }
+
+const scrollTopBtn = document.createElement("button");
+scrollTopBtn.type = "button";
+scrollTopBtn.className = "scroll-top-btn";
+scrollTopBtn.setAttribute("aria-label", "Sus");
+scrollTopBtn.innerHTML = '<span class="material-icons-outlined" aria-hidden="true">north</span>';
+document.body.append(scrollTopBtn);
+
+const toggleScrollTopBtn = () => {
+  const isVisible = window.scrollY > 360;
+  scrollTopBtn.classList.toggle("is-visible", isVisible);
+};
+
+scrollTopBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+window.addEventListener("scroll", toggleScrollTopBtn, { passive: true });
+toggleScrollTopBtn();
