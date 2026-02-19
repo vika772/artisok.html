@@ -290,35 +290,6 @@ html.dark .theme-toggle {
   pointer-events: auto;
 }
 
-.home-sections-nav {
-  padding: 1rem 0 0;
-}
-
-.home-sections-links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.55rem;
-}
-
-.home-sections-links a {
-  padding: 0.56rem 0.95rem;
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--surface) 66%, #fff);
-  color: var(--text);
-  font-size: 0.76rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
-}
-
-.home-sections-links a:hover {
-  transform: translateY(-1px);
-  background: var(--primary);
-  color: #fff;
-}
-
 .about-grid {
   display: grid;
   grid-template-columns: 1.15fr 1fr;
@@ -553,10 +524,19 @@ html.dark .season-card {
   background: var(--card);
 }
 
+.menu-block-almond {
+  background: color-mix(in srgb, var(--surface) 78%, #f1efe2);
+}
+
+html.dark .menu-block-almond {
+  background: #344138;
+}
+
 .menu-grid {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: stretch;
 }
 
 .dessert-grid {
@@ -568,6 +548,9 @@ html.dark .season-card {
   background: color-mix(in srgb, var(--bg) 74%, transparent);
   padding: 0.9rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -588,19 +571,24 @@ html.dark .menu-item {
 }
 
 .menu-item h4 {
-  margin: 0.65rem 0 0.35rem;
+  margin: 0.4rem 0 0.04rem;
   font-size: 1rem;
   font-weight: 700;
+  line-height: 1.18;
+  min-height: 1.45em;
 }
 
 .menu-item p {
   margin: 0;
   font-size: 0.83rem;
+  line-height: 1.2;
+  min-height: 1.45em;
   color: var(--muted);
 }
 
 .menu-item span {
-  margin-top: 0.5rem;
+  margin-top: 0.08rem;
+  padding-top: 0;
   display: inline-block;
   font-family: "Anton", sans-serif;
   letter-spacing: 0.04em;
@@ -1558,10 +1546,6 @@ html.dark .service-card {
     width: min(1120px, calc(100% - 1.2rem));
   }
 
-  .home-sections-links {
-    justify-content: flex-start;
-  }
-
   .about-slider {
     min-height: 270px;
   }
@@ -1611,6 +1595,14 @@ html.dark .service-card {
   .menu-grid,
   .dessert-grid {
     grid-template-columns: 1fr;
+  }
+
+  .menu-item h4 {
+    min-height: 1.4em;
+  }
+
+  .menu-item p {
+    min-height: 1.4em;
   }
 
   .theme-toggle {
