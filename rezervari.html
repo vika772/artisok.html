@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Rezervări online la PLAY ROOM ARTICHOKE: alege data, ora și numărul de persoane."
+    />
+    <meta
+      name="keywords"
+      content="PLAY ROOM ARTICHOKE, rezervari online, masa, cafenea, program"
+    />
+    <title>Rezervări - PLAY ROOM ARTICHOKE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Comfortaa:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <script src="scripts/main.js" defer></script>
+    <script type="module" src="scripts/firebase.js"></script>
+  </head>
+  <body>
+    <button
+      class="theme-toggle"
+      id="themeToggle"
+      type="button"
+      aria-label="Schimbă tema"
+    >
+      <span class="material-icons-outlined" id="themeIcon">dark_mode</span>
+    </button>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="brand" aria-label="Acasă">
+          <span class="brand-icon material-icons-outlined">coffee</span>
+          <span class="brand-text">PLAY ROOM ARTICHOKE</span>
+        </a>
+
+        <nav class="site-nav" aria-label="Navigare principală">
+          <a href="index.html#about">Despre noi</a>
+          <a href="index.html#menu">Meniu</a>
+          <a href="index.html#seasonal">Sezoniere</a>
+          <a href="index.html#reviews">Recenzii</a>
+          <a href="rezervari.html" class="is-active">Rezervări</a>
+          <a href="contact.html">Contacte</a>
+        </nav>
+
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          type="button"
+          aria-label="Deschide meniul"
+          aria-expanded="false"
+          aria-controls="mobileNav"
+        >
+          <span class="material-icons-outlined">menu</span>
+        </button>
+
+        <a class="book-btn" href="#booking-form">Rezervă</a>
+      </div>
+    </header>
+    <nav class="mobile-nav" id="mobileNav" aria-label="Navigare mobilă">
+      <div class="container mobile-nav-inner">
+        <a href="index.html#about">Despre noi</a>
+        <a href="index.html#menu">Meniu</a>
+        <a href="index.html#seasonal">Sezoniere</a>
+        <a href="index.html#reviews">Recenzii</a>
+        <a href="rezervari.html" class="is-active">Rezervări</a>
+        <a href="contact.html">Contacte</a>
+      </div>
+    </nav>
+
+    <main class="contact-main">
+      <section class="section contact-hero">
+        <div class="container">
+          <div class="contact-hero-card">
+            <p class="section-kicker">Locul tău te așteaptă</p>
+            <h1 class="section-title">Rezervări</h1>
+            <p>
+              Completează formularul de mai jos și îți confirmăm rezervarea în
+              cel mai scurt timp.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact-section" id="booking-form">
+        <div class="container contact-layout">
+          <aside class="contact-side">
+            <article class="contact-card">
+              <h2>Informații utile</h2>
+              <div class="contact-item">
+                <span class="material-icons-outlined">event_seat</span>
+                <div>
+                  <strong>Capacitate</strong>
+                  <p>De la 2 la 12 persoane per rezervare.</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <span class="material-icons-outlined">schedule</span>
+                <div>
+                  <strong>Interval orar</strong>
+                  <p>Lun-Dum: 09:00 - 22:00</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <span class="material-icons-outlined">phone</span>
+                <div>
+                  <strong>Confirmări</strong>
+                  <p>+7 (999) 123-45-67</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <span class="material-icons-outlined">place</span>
+                <div>
+                  <strong>Adresă</strong>
+                  <p>str. Pușkin, nr. 10, Sankt Petersburg</p>
+                </div>
+              </div>
+            </article>
+
+            <div
+              class="map-card contact-map"
+              role="img"
+              aria-label="Locația cafenelei pe hartă"
+            >
+              <div class="map-pin">
+                <span class="material-icons-outlined">location_on</span>
+              </div>
+              <span class="map-note"
+                >str. Pușkin, nr. 10, Sankt Petersburg</span
+              >
+            </div>
+          </aside>
+
+          <article class="contact-form-card">
+            <h2>Formular rezervare</h2>
+            <p>
+              Te rugăm să introduci datele corecte pentru a putea confirma masa.
+            </p>
+            <form class="contact-form" id="bookingForm" action="#" method="post">
+              <div class="contact-form-row">
+                <label>
+                  Nume
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Ion Popescu"
+                    required
+                  />
+                </label>
+                <label>
+                  Telefon
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="+373 XX XXX XXX"
+                    required
+                  />
+                </label>
+              </div>
+              <div class="contact-form-row">
+                <label>
+                  Data
+                  <input type="date" name="date" required />
+                </label>
+                <label>
+                  Ora
+                  <input type="time" name="time" required />
+                </label>
+              </div>
+              <div class="contact-form-row">
+                <label>
+                  Număr persoane
+                  <input
+                    type="number"
+                    name="guests"
+                    min="1"
+                    max="12"
+                    value="2"
+                  />
+                </label>
+                <label>
+                  Zonă
+                  <select name="zone">
+                    <option>Interior</option>
+                    <option>Terasă</option>
+                    <option>Lângă fereastră</option>
+                  </select>
+                </label>
+              </div>
+              <label>
+                Detalii suplimentare
+                <textarea
+                  name="message"
+                  rows="4"
+                  placeholder="Preferințe, ocazie specială, alergii..."
+                ></textarea>
+              </label>
+              <button type="submit">Trimite rezervarea</button>
+              <p class="form-status" id="bookingStatus" aria-live="polite"></p>
+            </form>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div
+          class="map-card"
+          role="img"
+          aria-label="Locația cafenelei pe hartă"
+        >
+          <div class="map-pin">
+            <span class="material-icons-outlined">location_on</span>
+          </div>
+          <span class="map-note">str. Pușkin, nr. 10, Sankt Petersburg</span>
+        </div>
+
+        <div class="footer-content">
+          <div class="brand brand-footer">
+            <span class="brand-icon material-icons-outlined">coffee</span>
+            <span class="brand-text">PLAY ROOM ARTICHOKE</span>
+          </div>
+
+          <p>
+            Atmosferă cozy și cea mai bună cafea din oraș. Vino la noi pentru
+            inspirație. Ne găsești în centrul orașului.
+          </p>
+
+          <div class="footer-contacts">
+            <div>
+              <strong>Adresă</strong>
+              <span>str. Pușkin, nr. 10, Sankt Petersburg</span>
+            </div>
+            <div>
+              <strong>Telefon</strong>
+              <span>+7 (999) 123-45-67</span>
+            </div>
+            <div>
+              <strong>Program</strong>
+              <span>Lun-Dum: 09:00 - 22:00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container copyright">
+        © 2026 Cafea și Confort. Toate drepturile rezervate.
+      </div>
+      <p class="container site-disclaimer">
+        Acest website a fost realizat în cadrul competiției „Tekwill Junior
+        Ambassadors” organizată de proiectul „Tekwill în Fiecare Școală” și nu
+        reflectă neapărat opinia proiectului.
+      </p>
+    </footer>
+  </body>
+</html>

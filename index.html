@@ -1,114 +1,428 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ro">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Loc de Joacă & Cafenea</title>
-    <link rel="stylesheet" href="./styles/normalize.css" />
-    <link rel="stylesheet" href="./styles/main.css" />
+    <meta
+      name="description"
+      content="PLAY ROOM ARTICHOKE - cafenea locală cu băuturi artizanale, deserturi și rezervări online."
+    />
+    <meta
+      name="keywords"
+      content="PLAY ROOM ARTICHOKE, cafenea, rezervari, meniu, deserturi, contact"
+    />
+    <title>PLAY ROOM ARTICHOKE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Comfortaa:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <script src="scripts/main.js" defer></script>
   </head>
   <body>
-    <header class="header">
-      <div class="container">
-        <div class="header__wrapper">
-          <div class="header__logo logo">
-            <strong class="logo__text">LOGO JOC</strong>
-          </div>
+    <button
+      class="theme-toggle"
+      id="themeToggle"
+      type="button"
+      aria-label="Schimbă tema"
+    >
+      <span class="material-icons-outlined" id="themeIcon">dark_mode</span>
+    </button>
 
-          <nav class="header__nav nav">
-            <ul class="nav__list">
-              <li class="nav__item">
-                <a href="#hero" class="nav__link">Despre noi</a>
-              </li>
-              <li class="nav__item">
-                <a href="#menu" class="nav__link">Meniu</a>
-              </li>
-              <li class="nav__item">
-                <a href="#contacte" class="nav__link">Contacte</a>
-              </li>
-            </ul>
-            <span class="nav__languages">🌐 RO / EN / RU</span>
-          </nav>
-        </div>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html#about" class="brand" aria-label="Acasă">
+          <span class="brand-icon material-icons-outlined">coffee</span>
+          <span class="brand-text">PLAY ROOM ARTICHOKE</span>
+        </a>
+
+        <nav class="site-nav" aria-label="Navigare principală">
+          <a href="#about">Despre noi</a>
+          <a href="#menu">Meniu</a>
+          <a href="#seasonal">Sezoniere</a>
+          <a href="#reviews">Recenzii</a>
+          <a href="rezervari.html">Rezervări</a>
+          <a href="contact.html">Contacte</a>
+        </nav>
+
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          type="button"
+          aria-label="Deschide meniul"
+          aria-expanded="false"
+          aria-controls="mobileNav"
+        >
+          <span class="material-icons-outlined">menu</span>
+        </button>
+
+        <a class="book-btn" href="rezervari.html">Rezervă</a>
       </div>
     </header>
+    <nav class="mobile-nav" id="mobileNav" aria-label="Navigare mobilă">
+      <div class="container mobile-nav-inner">
+        <a href="#about">Despre noi</a>
+        <a href="#menu">Meniu</a>
+        <a href="#seasonal">Sezoniere</a>
+        <a href="#reviews">Recenzii</a>
+        <a href="rezervari.html">Rezervări</a>
+        <a href="contact.html">Contacte</a>
+      </div>
+    </nav>
 
-    <main class="main-content">
-      <section class="hero" id="hero">
-        <div class="container">
-          <div class="hero__content">
-            <h1 class="hero__title">DESPRE NOI</h1>
+    <main>
+      <section class="section about" id="about">
+        <div class="container about-grid">
+          <div class="about-slider" aria-label="Fotografii din cafenea">
+            <img
+              class="slide is-active"
+              src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1600&q=80"
+              alt="Interior confortabil de cafenea"
+            />
+            <img
+              class="slide"
+              src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1600&q=80"
+              alt="Barista pregătește cafea"
+            />
+            <img
+              class="slide"
+              src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1600&q=80"
+              alt="Cafea și deserturi pe masă"
+            />
+            <button
+              class="slider-btn slider-btn-left"
+              type="button"
+              data-slide="prev"
+              aria-label="Fotografia anterioară"
+            >
+              <span class="material-icons-outlined">chevron_left</span>
+            </button>
+            <button
+              class="slider-btn slider-btn-right"
+              type="button"
+              data-slide="next"
+              aria-label="Fotografia următoare"
+            >
+              <span class="material-icons-outlined">chevron_right</span>
+            </button>
+            <div
+              class="slider-dots"
+              id="sliderDots"
+              aria-label="Comutatoare slider"
+            ></div>
           </div>
 
-          <div class="hero__gallery">
-            <img src="https://via.placeholder.com" alt="Zona de joaca" class="hero__image"/>
-            <img src="https://via.placeholder.com" alt="Zona cafenea" class="hero__image"/>
-          </div>
-
-          <div class="hero__description">
-            <p class="hero__text">
-              Locul nostru de joacă este un spațiu prietenos și sigur, creat
-              special pentru bucuria copiilor și relaxarea părinților. Cei mici
-              se pot distra în voie într-un mediu colorat...
-            </p>
-            <p class="hero__text">
-              În același timp, părinții se pot bucura de momente de liniște în
-              cafeneaua cochetă...
-            </p>
+          <div class="about-copy">
+            <h1 class="display-title">DESPRE NOI</h1>
+            <article class="quote-card">
+              <p>
+                „Cafea și Confort” este locul unde te poți bucura de cafea
+                aromată, băuturi de autor și deserturi gustoase într-o atmosferă
+                caldă, ca acasă. Cafeneaua noastră este creată pentru cei care
+                caută un colț de liniște în mijlocul agitației urbane.
+              </p>
+            </article>
           </div>
         </div>
       </section>
 
-      <section class="menu" id="menu">
+      <section class="hero-strip" aria-label="Banner decorativ">
+        <img
+          src="https://images.unsplash.com/photo-1497636577773-f1231844b336?auto=format&fit=crop&w=2000&q=80"
+          alt="Latte și croissante"
+        />
+      </section>
+
+      <section class="section seasonal" id="seasonal">
         <div class="container">
-          <h2 class="menu__title">MENIU</h2>
+          <p class="section-kicker">Doar pentru o perioadă limitată</p>
+          <h2 class="section-title">Oferte sezoniere</h2>
 
-          <div class="menu__grid">
-            <article class="menu__item card">
-              <h3 class="card__title">Băuturi calde</h3>
-              <p class="card__info">Espresso - 15 MDL</p>
-              <p class="card__info">Americano - 15 MDL</p>
-               <p class="card__info">Americano cu lapte - 18 MDL</p>
-              <p class="card__info">Cappuccino - 20 MDL</p>
-               <p class="card__info">Latte - 25 MDL</p>
-              <p class="card__info">Cacao - 20 MDL</p>
-              <p class="card__info">Ceai - 12 MDL</p>
-              
-    
-
+          <div class="seasonal-grid">
+            <article class="season-card">
+              <img
+                src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=900&q=80"
+                alt="Latte cu lavandă"
+              />
+              <div class="season-card-text">
+                <h3>Latte cu lavandă</h3>
+                <p>
+                  Espresso fin cu sirop de lavandă de casă și spumă de lapte
+                  catifelată.
+                </p>
+                <span>350 ₽</span>
+              </div>
             </article>
 
-            <article class="menu__item card">
-              <h3 class="card__title">Băuturi cu lapte de migdale</h3>
-              <p class="card__info">Americcano - 25 MDL</p>
-              <p class="card__info">Cappuccino 30 - MDL</p>
-              <p class="card__info">Latte - 40 MDL</p>
-               <p class="card__info">Cacao - 30 MDL</p>
+            <article class="season-card">
+              <img
+                src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=900&q=80"
+                alt="Latte cu dovleac și condimente"
+              />
+              <div class="season-card-text">
+                <h3>Latte cu dovleac și condimente</h3>
+                <p>
+                  Băutură reconfortantă cu piure de dovleac, scorțișoară și
+                  nucșoară.
+                </p>
+                <span>380 ₽</span>
+              </div>
             </article>
+          </div>
+        </div>
+      </section>
 
-            <article class="menu__item card">
-              <h3 class="card__title">Pentru Copii</h3>
-              <p class="card__info">Suc natural - 15 MDL</p>
-              <p class="card__info">Brioșe - 18 MDL</p>
+      <section class="section menu" id="menu">
+        <div class="container">
+          <div class="menu-head">
+            <h2 class="section-title">Meniu</h2>
+          </div>
+
+          <div class="menu-block">
+            <h3>Cafea</h3>
+            <div class="menu-grid">
+              <article class="menu-item">
+                <img
+                  src="https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=500&q=80"
+                  alt="Cappuccino"
+                />
+                <h4>Cappuccino</h4>
+                <p>cu artă latte</p>
+                <span>250 ₽</span>
+              </article>
+              <article class="menu-item">
+                <img
+                  src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=500&q=80"
+                  alt="Cacao"
+                />
+                <h4>Cacao</h4>
+                <p>cu spumă de lapte</p>
+                <span>200 ₽</span>
+              </article>
+              <article class="menu-item">
+                <img
+                  src="https://images.unsplash.com/photo-1517701550927-30cf4ba1f22b?auto=format&fit=crop&w=500&q=80"
+                  alt="Espresso macchiato"
+                />
+                <h4>Espresso macchiato</h4>
+                <p>porție clasică</p>
+                <span>180 ₽</span>
+              </article>
+              <article class="menu-item">
+                <img
+                  src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=500&q=80"
+                  alt="Flat white"
+                />
+                <h4>Flat white</h4>
+                <p>pe espresso dublu</p>
+                <span>250 ₽</span>
+              </article>
+              <article class="menu-item">
+                <img
+                  src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=500&q=80"
+                  alt="Latte"
+                />
+                <h4>Latte</h4>
+                <p>textură fină de lapte</p>
+                <span>270 ₽</span>
+              </article>
+              <article class="menu-item">
+                <img
+                  src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=500&q=80"
+                  alt="Latte caramel"
+                />
+                <h4>Latte caramel</h4>
+                <p>cu frișcă</p>
+                <span>320 ₽</span>
+              </article>
+              <article class="menu-item">
+                <img
+                  src="https://images.unsplash.com/photo-1514066558159-fc8c737ef259?auto=format&fit=crop&w=500&q=80"
+                  alt="Ciocolată caldă"
+                />
+                <h4>Ciocolată caldă</h4>
+                <p>densă și intensă</p>
+                <span>310 ₽</span>
+              </article>
+              <article class="menu-item">
+                <img
+                  src="https://images.unsplash.com/photo-1501747315-124a0eaca060?auto=format&fit=crop&w=500&q=80"
+                  alt="Americano"
+                />
+                <h4>Americano</h4>
+                <p>cafea neagră</p>
+                <span>180 ₽</span>
+              </article>
+            </div>
+          </div>
+
+          <div class="menu-block menu-block-dessert">
+            <h3>Deserturi</h3>
+            <div class="menu-grid dessert-grid">
+              <article class="menu-item">
+                <img
+                  src="https://images.unsplash.com/photo-1481391032119-d89fee407e44?auto=format&fit=crop&w=500&q=80"
+                  alt="Cupcake"
+                />
+                <h4>Cupcake</h4>
+                <p>cu cremă de ciocolată</p>
+                <span>150 ₽</span>
+              </article>
+              <article class="menu-item">
+                <img
+                  src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=500&q=80"
+                  alt="Donut"
+                />
+                <h4>Donut</h4>
+                <p>cu glazură de căpșuni</p>
+                <span>120 ₽</span>
+              </article>
+              <article class="menu-item">
+                <img
+                  src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=500&q=80"
+                  alt="Tort pandișpan"
+                />
+                <h4>Tort pandișpan</h4>
+                <p>cu cremă fină</p>
+                <span>220 ₽</span>
+              </article>
+              <article class="menu-item">
+                <img
+                  src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=500&q=80"
+                  alt="Înghețată"
+                />
+                <h4>Înghețată spaghetti</h4>
+                <p>desert cu înghețată</p>
+                <span>280 ₽</span>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reviews" id="reviews">
+        <div class="container">
+          <h2 class="section-title">Recenziile oaspeților</h2>
+          <div class="reviews-track">
+            <article class="review-card">
+              <p>
+                Un loc minunat! Latte-ul cu lavandă a devenit băutura mea
+                preferată. Foarte confortabil, ca acasă.
+              </p>
+              <div class="review-author">
+                <span>A</span>
+                <div>
+                  <h4>Ana S.</h4>
+                  <small>★★★★★</small>
+                </div>
+              </div>
+            </article>
+            <article class="review-card">
+              <p>
+                Cea mai bună cafea din zonă. Personalul este mereu amabil, iar
+                deserturile se topesc în gură.
+              </p>
+              <div class="review-author">
+                <span>M</span>
+                <div>
+                  <h4>Mihai D.</h4>
+                  <small>★★★★★</small>
+                </div>
+              </div>
+            </article>
+            <article class="review-card">
+              <p>
+                Un loc liniștit pentru lucru și relaxare. Latte-ul cu dovleac
+                din această toamnă a fost magic.
+              </p>
+              <div class="review-author">
+                <span>E</span>
+                <div>
+                  <h4>Elena C.</h4>
+                  <small>★★★★☆</small>
+                </div>
+              </div>
+            </article>
+            <article class="review-card">
+              <p>
+                Ador cupcake-urile lor. Mereu proaspete și foarte frumoase. Le
+                recomand tuturor prietenilor.
+              </p>
+              <div class="review-author">
+                <span>C</span>
+                <div>
+                  <h4>Cristian V.</h4>
+                  <small>★★★★★</small>
+                </div>
+              </div>
             </article>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="footer" id="contacte">
-      <div class="container">
-        <address class="footer__address contact-info">
-          <p class="contact-info__item">
-            📍 Adresa: Str. 31 August 1989, Cahul
+    <footer class="site-footer" id="contacts">
+      <div class="container footer-grid">
+        <div
+          class="map-card"
+          role="img"
+          aria-label="Locația cafenelei pe hartă"
+        >
+          <div class="map-pin">
+            <span class="material-icons-outlined">location_on</span>
+          </div>
+          <span class="map-note">str. Pușkin, nr. 10, Sankt Petersburg</span>
+        </div>
+
+        <div class="footer-content">
+          <div class="brand brand-footer">
+            <span class="brand-icon material-icons-outlined">coffee</span>
+            <span class="brand-text">PLAY ROOM ARTICHOKE</span>
+          </div>
+
+          <p>
+            Atmosferă cozy și cea mai bună cafea din oraș. Vino la noi pentru
+            inspirație. Ne găsești în centrul orașului.
           </p>
-          <p class="contact-info__item">📞 Contact: +373 22 222 222</p>
-          <p class="contact-info__item">
-            📧 Email:
-            <a href="mailto:info@exemplu.md" class="contact-info__link">info@exemplu.md</a>
-          </p>
-        </address>
+
+          <div class="footer-contacts">
+            <div>
+              <strong>Adresă</strong>
+              <span>str. Pușkin, nr. 10, Sankt Petersburg</span>
+            </div>
+            <div>
+              <strong>Telefon</strong>
+              <span>+7 (999) 123-45-67</span>
+            </div>
+            <div>
+              <strong>Program</strong>
+              <span>Lun-Dum: 09:00 - 22:00</span>
+            </div>
+          </div>
+
+          <div class="socials" aria-label="Rețele sociale">
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
+            <a href="https://vk.com/" target="_blank" rel="noopener noreferrer" aria-label="VK">VK</a>
+            <a href="https://t.me/ArtichokeCH_BOT" target="_blank" rel="noopener noreferrer" aria-label="Telegram">TG</a>
+          </div>
+        </div>
       </div>
+
+      <div class="container copyright">
+        © 2026 Cafea și Confort. Toate drepturile rezervate.
+      </div>
+      <p class="container site-disclaimer">
+        Acest website a fost realizat în cadrul competiției „Tekwill Junior
+        Ambassadors” organizată de proiectul „Tekwill în Fiecare Școală” și nu
+        reflectă neapărat opinia proiectului.
+      </p>
     </footer>
   </body>
 </html>

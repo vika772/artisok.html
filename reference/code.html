@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Reservation Confirmation - Coffee &amp; Comfort</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&amp;family=Playfair+Display:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#8fa886", // Sage Green
+                        "primary-dark": "#758c6c", // Darker Sage
+                        "secondary": "#a68b75", // Mocha Brown/Beige
+                        "mocha": "#5d4e44", // Dark Mocha Text
+                        "cream": "#fdf8f2", // Light Cream Background
+                        "cream-dark": "#f5efe6", // Slightly darker cream for cards
+                        "background-light": "#fdf8f2",
+                        "background-dark": "#2c2621",
+                        "text-main": "#5d4e44",
+                        "text-subtle": "#8c7e72",
+                    },
+                    fontFamily: {
+                        "display": ["Playfair Display", "serif"],
+                        "sans": ["Work Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "2xl": "2rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-sans text-text-main antialiased min-h-screen flex flex-col">
+<header class="w-full bg-[#dce3d6] dark:bg-[#1a2615]">
+<div class="px-6 md:px-10 py-5 flex items-center justify-between max-w-7xl mx-auto">
+<div class="flex items-center gap-3 text-mocha dark:text-white">
+<div class="size-10 flex items-center justify-center bg-mocha/10 rounded-full">
+<span class="material-symbols-outlined text-3xl text-mocha">local_cafe</span>
+</div>
+<h2 class="text-xl font-display font-bold leading-tight tracking-wide uppercase text-mocha">Coffee &amp; Comfort</h2>
+</div>
+<nav class="hidden md:flex flex-1 justify-end gap-10 items-center">
+<div class="flex items-center gap-8">
+<a class="text-mocha dark:text-white text-sm font-medium hover:text-primary transition-colors tracking-wide uppercase" href="#">Menu</a>
+<a class="text-mocha dark:text-white text-sm font-medium hover:text-primary transition-colors tracking-wide uppercase" href="#">About Us</a>
+<a class="text-mocha dark:text-white text-sm font-medium hover:text-primary transition-colors tracking-wide uppercase" href="#">Locations</a>
+<a class="text-mocha dark:text-white text-sm font-medium hover:text-primary transition-colors tracking-wide uppercase" href="#">Reserve</a>
+</div>
+<button class="flex min-w-[100px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-11 px-8 bg-secondary text-white text-xs font-bold hover:bg-[#8f7661] transition-colors tracking-widest uppercase">
+<span class="truncate">Sign In</span>
+</button>
+</nav>
+<button class="md:hidden text-mocha dark:text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="flex-grow flex items-center justify-center p-4 sm:p-8 relative">
+<div class="absolute top-0 left-0 w-full h-64 bg-[#dce3d6] -z-10 rounded-b-[3rem]"></div>
+<div class="w-full max-w-lg bg-white dark:bg-[#2c2621] rounded-2xl shadow-[0_20px_40px_rgba(93,78,68,0.08)] overflow-hidden flex flex-col items-center p-8 sm:p-12 text-center mt-8">
+<div class="mb-8 relative">
+<div class="size-24 bg-primary/20 rounded-full flex items-center justify-center animate-fade-in">
+<span class="material-symbols-outlined text-5xl text-primary">check</span>
+</div>
+</div>
+<h1 class="text-5xl font-display font-bold text-mocha dark:text-[#e0d6cc] mb-4 tracking-tight">Table Reserved!</h1>
+<p class="text-text-subtle dark:text-[#a89b8e] mb-10 max-w-xs mx-auto text-base font-light leading-relaxed">
+            Your table is ready. We've sent a confirmation email to your inbox.
+        </p>
+<div class="w-full bg-[#f4f7f3] dark:bg-[#38302a] rounded-xl p-8 mb-10 flex flex-col gap-6 border border-[#e8ebe7] dark:border-[#4a4038]">
+<div class="flex items-center gap-5">
+<div class="size-12 rounded-full bg-white dark:bg-[#2c2621] flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-2xl">calendar_month</span>
+</div>
+<div class="text-left">
+<p class="text-[10px] font-bold text-text-subtle dark:text-[#a89b8e] uppercase tracking-widest mb-1">Date</p>
+<p class="text-lg font-display font-semibold text-mocha dark:text-[#e0d6cc]">October 24th, 2023</p>
+</div>
+</div>
+<div class="w-full h-px bg-[#e0e5de] dark:bg-[#4a4038]"></div>
+<div class="flex items-center gap-5">
+<div class="size-12 rounded-full bg-white dark:bg-[#2c2621] flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-2xl">schedule</span>
+</div>
+<div class="text-left">
+<p class="text-[10px] font-bold text-text-subtle dark:text-[#a89b8e] uppercase tracking-widest mb-1">Time</p>
+<p class="text-lg font-display font-semibold text-mocha dark:text-[#e0d6cc]">10:00 AM</p>
+</div>
+</div>
+<div class="w-full h-px bg-[#e0e5de] dark:bg-[#4a4038]"></div>
+<div class="flex items-center gap-5">
+<div class="size-12 rounded-full bg-white dark:bg-[#2c2621] flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-2xl">group</span>
+</div>
+<div class="text-left">
+<p class="text-[10px] font-bold text-text-subtle dark:text-[#a89b8e] uppercase tracking-widest mb-1">Guests</p>
+<p class="text-lg font-display font-semibold text-mocha dark:text-[#e0d6cc]">2 People</p>
+</div>
+</div>
+</div>
+<div class="w-full h-40 rounded-xl bg-center bg-cover mb-8 relative overflow-hidden group shadow-md" data-alt="Cozy cafe interior with warm lighting and wooden tables" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBvDAtbfRXO9_DcltftE2AD5hhfg9vPwJZ1If-8q2ztsYz4g1S-rJwgHf7hL2qy_vXY276o1BUyncaBh_eR1f-xd_JMMoGTGxIq6fd7Ae15g3u0UxuBSau9S6aFYZG9knz0ixSCyzYWCXfFcfLMyvKZ_soxUqFgelhhr5BOmsYObdQf5_-LIXKKubi9aMz6I1C_FSJ3CvjiwI99i_gTsRz10ZVKNJ_84ZMEXrm3xwVA4zkgh5GqscezHIzDYn30YYtJ63-JMaQfg4M');">
+<div class="absolute inset-0 bg-[#5d4e44]/20 mix-blend-multiply group-hover:bg-[#5d4e44]/10 transition-colors"></div>
+</div>
+<div class="w-full flex flex-col gap-4">
+<button class="w-full flex items-center justify-center gap-3 rounded-full h-14 px-6 bg-secondary text-white text-sm font-bold uppercase tracking-widest hover:bg-[#8f7661] transition-all shadow-[0_4px_14px_rgba(166,139,117,0.4)] hover:shadow-[0_6px_20px_rgba(166,139,117,0.6)] transform active:scale-[0.98]">
+<span class="material-symbols-outlined text-lg">event</span>
+<span>Save to Calendar</span>
+</button>
+<a class="w-full flex items-center justify-center rounded-full h-12 px-6 bg-transparent text-text-subtle dark:text-[#a89b8e] hover:text-mocha dark:hover:text-white text-xs font-bold uppercase tracking-widest transition-colors" href="#">
+                Back to Home
+            </a>
+</div>
+</div>
+</main>
+<footer class="bg-white dark:bg-[#2c2621] border-t border-[#f1f4f0] dark:border-[#4a4038] py-12 px-5 text-center">
+<div class="max-w-7xl mx-auto flex flex-col gap-10">
+<div class="flex flex-wrap items-center justify-center gap-8 md:gap-16">
+<a class="text-text-subtle dark:text-[#a89b8e] hover:text-primary transition-colors text-sm font-medium uppercase tracking-wide" href="#">Privacy Policy</a>
+<a class="text-text-subtle dark:text-[#a89b8e] hover:text-primary transition-colors text-sm font-medium uppercase tracking-wide" href="#">Terms of Service</a>
+<a class="text-text-subtle dark:text-[#a89b8e] hover:text-primary transition-colors text-sm font-medium uppercase tracking-wide" href="#">Contact</a>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="size-10 rounded-full border border-text-subtle/20 flex items-center justify-center text-text-subtle dark:text-[#a89b8e] hover:bg-primary hover:text-white hover:border-primary transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-lg">camera_alt</span>
+</a>
+<a class="size-10 rounded-full border border-text-subtle/20 flex items-center justify-center text-text-subtle dark:text-[#a89b8e] hover:bg-primary hover:text-white hover:border-primary transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-lg">flutter_dash</span>
+</a>
+<a class="size-10 rounded-full border border-text-subtle/20 flex items-center justify-center text-text-subtle dark:text-[#a89b8e] hover:bg-primary hover:text-white hover:border-primary transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-lg">public</span>
+</a>
+</div>
+<p class="text-text-subtle/60 dark:text-[#a89b8e]/60 text-xs font-light tracking-wide">© 2023 Coffee &amp; Comfort. All rights reserved.</p>
+</div>
+</footer>
+
+</body></html>
