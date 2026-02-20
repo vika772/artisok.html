@@ -1155,8 +1155,17 @@ html.dark .gallery-item {
   transition: transform 0.3s ease;
 }
 
+.gallery-main .gallery-item img {
+  filter: grayscale(100%);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
 .gallery-item:hover img {
   transform: scale(1.05);
+}
+
+.gallery-main .gallery-item:hover img {
+  filter: grayscale(0%);
 }
 
 .gallery-item figcaption {
@@ -1206,13 +1215,19 @@ html.dark .gallery-item {
   aspect-ratio: 9 / 16;
   object-fit: cover;
   cursor: pointer;
-  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+  filter: grayscale(100%);
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease,
+    filter 0.22s ease;
 }
 
 .gallery-video-grid video:hover {
   transform: translateY(-4px);
   box-shadow: 0 16px 28px rgba(0, 0, 0, 0.2);
   border-color: color-mix(in srgb, var(--primary) 34%, transparent);
+  filter: grayscale(0%);
 }
 
 .gallery-video-grid video:focus-visible {
@@ -1488,14 +1503,36 @@ html.dark .product-card {
   margin-top: 0.62rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 0.7rem;
 }
 
 .product-price {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 0;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  background: var(--cream);
+  color: var(--primary);
+  font-weight: 700;
   font-family: "Anton", sans-serif;
   letter-spacing: 0.04em;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
+  transition:
+    transform 0.24s ease,
+    background-color 0.24s ease,
+    color 0.24s ease;
+  cursor: pointer;
+}
+
+.product-card:hover .product-price,
+.product-price:hover {
+  transform: translateY(-1px);
+  background: var(--primary);
+  color: #fff;
 }
 
 .product-card-meta small {
