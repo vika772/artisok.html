@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Reguli PLAY ROOM ARTICHOKE: text, imagine și video pentru joacă sigură."
+      content="Rezervări online la PLAY ROOM ARTICHOKE: alege data, ora și numărul de persoane pentru cafenea și spațiul de joacă pentru copii de până la 6 ani."
     />
     <meta
       name="keywords"
-      content="PLAY ROOM ARTICHOKE, reguli, joacă sigură, copii, video"
+      content="PLAY ROOM ARTICHOKE, rezervari online, masa, cafenea, program, spațiu de joacă, copii până la 6 ani"
     />
-    <title>Reguli - PLAY ROOM ARTICHOKE</title>
+    <title>Rezervări - PLAY ROOM ARTICHOKE</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,24 +22,25 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles/normalize.css" />
-    <link rel="stylesheet" href="styles/main.css" />
-    <script src="scripts/main.js" defer></script>
+    <link rel="stylesheet" href="../styles/normalize.css" />
+    <link rel="stylesheet" href="../styles/main.css" />
+    <script src="../scripts/main.js" defer></script>
+    <script type="module" src="../scripts/firebase.js"></script>
   </head>
   <body>
     <header class="site-header">
       <div class="container header-inner">
-        <a href="index.html" class="brand" aria-label="Acasă">
+        <a href="../index.html" class="brand" aria-label="Acasă">
           <span class="brand-icon material-icons-outlined">coffee</span>
           <span class="brand-text">PLAY ROOM ARTICHOKE</span>
         </a>
 
         <nav class="site-nav" aria-label="Navigare principală">
-          <a href="index.html">Acasă</a>
+          <a href="../index.html">Acasă</a>
           <a href="galerie.html">Galerie</a>
           <a href="produse.html">Produse</a>
           <a href="servicii.html">Servicii</a>
-          <a href="reguli.html" class="is-active">Reguli</a>
+          <a href="reguli.html">Reguli</a>
           <a href="contact.html">Contacte</a>
         </nav>
 
@@ -63,79 +64,155 @@
           >
             <span class="material-icons-outlined" id="themeIcon">dark_mode</span>
           </button>
-          <a class="book-btn" href="rezervari.html">Rezervă</a>
+          <a class="book-btn" href="#booking-form">Rezervă</a>
         </div>
       </div>
     </header>
     <nav class="mobile-nav" id="mobileNav" aria-label="Navigare mobilă">
       <div class="container mobile-nav-inner">
-        <a href="index.html">Acasă</a>
+        <a href="../index.html">Acasă</a>
         <a href="galerie.html">Galerie</a>
         <a href="produse.html">Produse</a>
         <a href="servicii.html">Servicii</a>
-        <a href="reguli.html" class="is-active">Reguli</a>
+        <a href="reguli.html">Reguli</a>
         <a href="contact.html">Contacte</a>
       </div>
     </nav>
 
-    <main class="rules-main">
+    <main class="contact-main">
       <section class="section contact-hero">
         <div class="container">
           <div class="contact-hero-card">
-            <p class="section-kicker">Reguli pentru joacă sigură</p>
-            <h1 class="section-title">Reguli</h1>
+            <p class="section-kicker">Locul tău te așteaptă</p>
+            <h1 class="section-title">Rezervări</h1>
             <p>
-              Pentru confortul tuturor copiilor și părinților, te rugăm să
-              respecți regulile noastre de bază.
+              Completează formularul de mai jos și îți confirmăm rezervarea în
+              cel mai scurt timp.
             </p>
           </div>
         </div>
       </section>
 
-      <section class="section rules-section" id="reguli-lista">
-        <div class="container rules-layout">
-          <article class="rules-card">
-            <h2>Reguli de joacă</h2>
-            <ul class="rules-list">
-              <li>Ne jucăm aici până la 6 ani.</li>
-              <li>Adulții sunt mereu alături.</li>
-              <li>Intrăm în șosete.</li>
-              <li>Mâini curate - joacă veselă.</li>
-              <li>Mâncarea și băuturile rămân afară.</li>
-              <li>Avem grijă de jucării.</li>
-              <li>Ne jucăm frumos, fără îmbrânceli.</li>
-              <li>Dacă suntem bolnavi - stăm acasă.</li>
-            </ul>
-            <p class="rules-note">
-              Vă mulțumim că respectați regulile. Împreună facem joaca sigură
-              și fericită.
-            </p>
-          </article>
-          <figure class="rules-card rules-image-card">
-            <img
-              src="img/reguli/reguli.png"
-              alt="Afiș cu reguli pentru joacă sigură"
-            />
-          </figure>
-        </div>
-      </section>
+      <section class="section contact-section" id="booking-form">
+        <div class="container contact-layout">
+          <aside class="contact-side">
+            <article class="contact-card">
+              <h2>Informații utile</h2>
+              <div class="contact-item">
+                <span class="material-icons-outlined">event_seat</span>
+                <div>
+                  <strong>Capacitate</strong>
+                  <p>De la 2 la 12 persoane per rezervare.</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <span class="material-icons-outlined">schedule</span>
+                <div>
+                  <strong>Interval orar</strong>
+                  <p>Lun-Dum: 09:00 - 22:00</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <span class="material-icons-outlined">phone</span>
+                <div>
+                  <strong>Confirmări</strong>
+                  <p>069883294</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <span class="material-icons-outlined">place</span>
+                <div>
+                  <strong>Adresă</strong>
+                  <p>Orașul Cahul, strada 31 August 1989, 4j</p>
+                </div>
+              </div>
+            </article>
 
-      <section class="section rules-video-section" id="reguli-video">
-        <div class="container">
-          <h2 class="section-title">Video</h2>
-          <article class="gallery-video-card rules-video-card">
-            <div class="rules-video-wrap">
-              <video
-                controls
-                preload="metadata"
-                playsinline
-                poster="img/reguli/reguli.png"
-                aria-label="Video reguli PLAY ROOM ARTICHOKE"
+            <div
+              class="map-card contact-map"
+              role="img"
+              aria-label="Locația cafenelei pe hartă"
+            >
+              <iframe
+                class="contact-map-embed"
+                src="https://maps.google.com/maps?q=Ora%C8%99ul%20Cahul%2C%20strada%2031%20August%201989%2C%204j&z=16&output=embed"
+                title="Harta locației PLAY ROOM ARTICHOKE"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+              <span class="map-note"
+                >Orașul Cahul, strada 31 August 1989, 4j</span
               >
-                <source src="img/reguli/reguli-video.mp4" type="video/mp4" />
-                Browserul tău nu suportă redarea video.
-              </video>
             </div>
+          </aside>
+
+          <article class="contact-form-card">
+            <h2>Formular rezervare</h2>
+            <p>
+              Te rugăm să introduci datele corecte pentru a putea confirma masa.
+            </p>
+            <form class="contact-form" id="bookingForm" action="#" method="post">
+              <div class="contact-form-row">
+                <label>
+                  Nume
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Ion Popescu"
+                    required
+                  />
+                </label>
+                <label>
+                  Telefon
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="+373 XX XXX XXX"
+                    required
+                  />
+                </label>
+              </div>
+              <div class="contact-form-row">
+                <label>
+                  Data
+                  <input type="date" name="date" required />
+                </label>
+                <label>
+                  Ora
+                  <input type="time" name="time" required />
+                </label>
+              </div>
+              <div class="contact-form-row">
+                <label>
+                  Număr persoane
+                  <input
+                    type="number"
+                    name="guests"
+                    min="1"
+                    max="12"
+                    value="2"
+                  />
+                </label>
+                <label>
+                  Zonă
+                  <select name="zone">
+                    <option>Interior</option>
+                    <option>Terasă</option>
+                    <option>Lângă fereastră</option>
+                  </select>
+                </label>
+              </div>
+              <label>
+                Detalii suplimentare
+                <textarea
+                  name="message"
+                  rows="4"
+                  placeholder="Preferințe, ocazie specială, alergii..."
+                ></textarea>
+              </label>
+              <button type="submit">Trimite rezervarea</button>
+              <p class="form-status" id="bookingStatus" aria-live="polite"></p>
+            </form>
           </article>
         </div>
       </section>
@@ -157,7 +234,7 @@
         <div class="footer-col footer-col-links">
           <h3>Navigare</h3>
           <nav class="footer-menu" aria-label="Linkuri rapide">
-            <a href="index.html">Acasă</a>
+            <a href="../index.html">Acasă</a>
             <a href="galerie.html">Galerie</a>
             <a href="produse.html">Produse</a>
             <a href="servicii.html">Servicii</a>
