@@ -20,10 +20,20 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-const form = document.getElementById("bookingForm");
-const statusEl = document.getElementById("bookingStatus");
+function setStatus(statusEl, text, type = "info") {
+  if (!statusEl) return;
+  statusEl.textContent = text;
+  statusEl.classList.remove("is-error", "is-success");
+  if (type === "error") statusEl.classList.add("is-error");
+  if (type === "success") statusEl.classList.add("is-success");
+}
 
-if (form) {
+const bookingForm = document.getElementById("bookingForm");
+const bookingStatusEl = document.getElementById("bookingStatus");
+
+if (bookingForm) {
+  const form = bookingForm;
+  const statusEl = bookingStatusEl;
   const submitButton = form.querySelector('button[type="submit"]');
   const dateInput = form.querySelector('input[name="date"]');
 
@@ -35,17 +45,9 @@ if (form) {
     dateInput.min = `${yyyy}-${mm}-${dd}`;
   }
 
-  const setStatus = (text, type = "info") => {
-    if (!statusEl) return;
-    statusEl.textContent = text;
-    statusEl.classList.remove("is-error", "is-success");
-    if (type === "error") statusEl.classList.add("is-error");
-    if (type === "success") statusEl.classList.add("is-success");
-  };
-
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
-    setStatus("");
+    setStatus(statusEl, "");
 
     const formData = new FormData(form);
     const data = {
@@ -61,7 +63,7 @@ if (form) {
     };
 
     if (!data.name || !data.phone || !data.date || !data.time) {
-      setStatus("Completează câmpurile obligatorii.", "error");
+      setStatus(statusEl, "Completează câmpurile obligatorii.", "error");
       return;
     }
 
@@ -70,10 +72,50 @@ if (form) {
     try {
       const docRef = await addDoc(collection(db, "rezervari"), data);
       form.reset();
-      setStatus(`Rezervarea a fost trimisă. ID: ${docRef.id}`, "success");
+      setStatus(statusEl, `Rezervarea a fost trimisă. ID: ${docRef.id}`, "success");
     } catch (error) {
       console.error("Failed to save reservation:", error);
-      setStatus("Eroare la trimitere. Încearcă din nou.", "error");
+      setStatus(statusEl, "Eroare la trimitere. Încearcă din nou.", "error");
+    } finally {
+      if (submitButton) submitButton.disabled = false;
+    }
+  });
+}
+
+const contactForm = document.getElementById("contactForm");
+const contactStatusEl = document.getElementById("contactStatus");
+
+if (contactForm) {
+  const submitButton = contactForm.querySelector('button[type="submit"]');
+
+  contactForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    setStatus(contactStatusEl, "");
+
+    const formData = new FormData(contactForm);
+    const data = {
+      name: (formData.get("name") || "").toString().trim(),
+      email: (formData.get("email") || "").toString().trim(),
+      subject: (formData.get("subject") || "").toString().trim(),
+      message: (formData.get("message") || "").toString().trim(),
+      createdAt: serverTimestamp(),
+      source: "website_contact_form",
+    };
+
+    if (!data.name || !data.email || !data.subject || !data.message) {
+      setStatus(contactStatusEl, "Completează câmpurile obligatorii.", "error");
+      return;
+    }
+
+    if (submitButton) submitButton.disabled = true;
+
+    try {
+      const docRef = await addDoc(collection(db, "contact_messages"), data);
+      contactForm.reset();
+      setStatus(contactStatusEl, `Mesajul a fost trimis. ID: ${docRef.id}`, "success");
+    } catch (error) {
+      console.error("Failed to save contact message:", error);
+      setStatus(contactStatusEl, "Eroare la trimitere. Încearcă din nou.", "error");
     } finally {
       if (submitButton) submitButton.disabled = false;
     }

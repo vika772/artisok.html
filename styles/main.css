@@ -601,10 +601,11 @@ html.dark .season-card {
 }
 
 .season-card-text span {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 5rem;
+  width: 100%;
+  min-width: 0;
   padding: 0.45rem 0.85rem;
   border-radius: 999px;
   background: color-mix(in srgb, var(--surface) 65%, #fff);
@@ -1756,6 +1757,25 @@ html.dark .service-card {
   color: #fff;
 }
 
+.services-note-block {
+  margin-top: 1.7rem;
+  text-align: center;
+}
+
+.services-note-title {
+  margin-top: 0;
+}
+
+.services-note-kicker {
+  margin: 0.45rem auto 0;
+  max-width: 64ch;
+}
+
+.services-note-final {
+  margin: 0.35rem auto 0;
+  max-width: 64ch;
+}
+
 .site-footer {
   margin-top: 2.6rem;
   padding: 3.2rem 0 1.6rem;
@@ -2028,6 +2048,15 @@ html.dark .service-card {
 }
 
 @media (max-width: 920px) {
+  .header-inner {
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
+
+  .brand {
+    margin-right: auto;
+  }
+
   .site-nav {
     display: none;
   }
@@ -2182,6 +2211,12 @@ html.dark .service-card {
   .footer-col-social {
     justify-self: start;
     width: 100%;
+  }
+
+  .footer-social-list {
+    width: auto;
+    justify-content: flex-start;
+    gap: 0.75rem;
   }
 
   .footer-map-btn {

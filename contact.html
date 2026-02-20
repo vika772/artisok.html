@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="styles/normalize.css" />
     <link rel="stylesheet" href="styles/main.css" />
     <script src="scripts/main.js" defer></script>
+    <script type="module" src="scripts/firebase.js"></script>
   </head>
   <body class="contact-page">
     <header class="site-header">
@@ -151,7 +152,7 @@
               Completează formularul și revenim cu un răspuns în cel mai scurt
               timp.
             </p>
-            <form class="contact-form" action="#" method="post">
+            <form class="contact-form" id="contactForm" action="#" method="post">
               <div class="contact-form-row">
                 <label>
                   Nume
@@ -191,6 +192,7 @@
                 ></textarea>
               </label>
               <button type="submit">Trimite</button>
+              <p class="form-status" id="contactStatus" aria-live="polite"></p>
             </form>
           </article>
         </div>
