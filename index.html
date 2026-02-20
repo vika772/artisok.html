@@ -37,8 +37,9 @@
         <nav class="site-nav" aria-label="Navigare principală">
           <a href="index.html" class="is-active">Acasă</a>
           <a href="galerie.html">Galerie</a>
-          <a href="produse-servicii.html">Produse</a>
-          <a href="rezervari.html">Rezervări</a>
+          <a href="produse.html">Produse</a>
+          <a href="servicii.html">Servicii</a>
+          <a href="reguli.html">Reguli</a>
           <a href="contact.html">Contacte</a>
         </nav>
 
@@ -70,8 +71,9 @@
       <div class="container mobile-nav-inner">
         <a href="index.html" class="is-active">Acasă</a>
         <a href="galerie.html">Galerie</a>
-        <a href="produse-servicii.html">Produse</a>
-        <a href="rezervari.html">Rezervări</a>
+        <a href="produse.html">Produse</a>
+        <a href="servicii.html">Servicii</a>
+        <a href="reguli.html">Reguli</a>
         <a href="contact.html">Contacte</a>
       </div>
     </nav>
@@ -82,17 +84,17 @@
           <div class="about-slider" aria-label="Fotografii din cafenea">
             <img
               class="slide is-active"
-              src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1600&q=80"
+              src="img/slider/slider-1.jpg"
               alt="Interior confortabil de cafenea"
             />
             <img
               class="slide"
-              src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1600&q=80"
+              src="img/slider/slider-2.jpg"
               alt="Barista pregătește cafea"
             />
             <img
               class="slide"
-              src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1600&q=80"
+              src="img/slider/slider-3.jpg"
               alt="Cafea și deserturi pe masă"
             />
             <button
@@ -141,8 +143,8 @@
 
       <section class="section seasonal" id="seasonal">
         <div class="container">
-          <p class="section-kicker">Doar pentru o perioadă limitată</p>
-          <h2 class="section-title">Oferte sezoniere</h2>
+          <p class="section-kicker">Arome speciale pentru această perioadă</p>
+          <h2 class="section-title">Selecția sezonului</h2>
 
           <div class="seasonal-grid">
             <article class="season-card">
@@ -177,7 +179,7 @@
           </div>
 
           <div class="seasonal-actions">
-            <a class="seasonal-cta" href="produse-servicii.html"
+            <a class="seasonal-cta" href="produse.html"
               >Vezi toate produsele</a
             >
           </div>
@@ -187,6 +189,10 @@
       <section class="section menu" id="menu">
         <div class="container">
           <div class="menu-head">
+            <p class="section-kicker">
+              Descoperă băuturi și deserturi pregătite cu grijă, pentru fiecare
+              moment al zilei.
+            </p>
             <h2 class="section-title">Meniu</h2>
           </div>
 
@@ -315,6 +321,90 @@
               </article>
             </div>
           </div>
+
+          <div class="seasonal-actions">
+            <a class="seasonal-cta" href="produse.html"
+              >Vezi toate produsele</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="section services-section" id="servicii">
+        <div class="container">
+          <p class="section-kicker">Timp pentru tine</p>
+          <h2 class="section-title">Servicii</h2>
+          <div class="services-grid">
+            <a class="service-card" href="rezervari.html" aria-label="Rezervare serviciu 1 oră">
+              <img
+                class="service-illustration"
+                src="img/servicii/serviciu-acces.svg"
+                alt="Serviciu de acces pentru 1 oră"
+              />
+              <h3>1 oră</h3>
+              <p>Acces standard în zona de joacă pentru o sesiune rapidă.</p>
+              <span class="service-price">40 MDL</span>
+            </a>
+            <a class="service-card" href="rezervari.html" aria-label="Rezervare serviciu Rămânere 1 oră">
+              <img
+                class="service-illustration"
+                src="img/servicii/serviciu-ramanere.svg"
+                alt="Serviciu de rămânere 1 oră"
+              />
+              <h3>Rămânere 1 oră</h3>
+              <p>Sesiune extinsă cu timp suplimentar pentru activități.</p>
+              <span class="service-price">60 MDL</span>
+            </a>
+            <a class="service-card" href="rezervari.html" aria-label="Rezervare serviciu 1 oră cu bonă">
+              <img
+                class="service-illustration"
+                src="img/servicii/serviciu-bona.svg"
+                alt="Serviciu de supraveghere cu bonă"
+              />
+              <h3>1 oră cu bonă</h3>
+              <p>Supraveghere dedicată pentru perioade mai lungi.</p>
+              <span class="service-price">100 MDL</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section home-gallery" id="galeria">
+        <div class="container">
+          <p class="section-kicker">Momente din cafenea</p>
+          <h2 class="section-title">Galeria</h2>
+          <div class="gallery-grid home-gallery-grid">
+            <figure class="gallery-item">
+              <img
+                src="img/galeria/foto1.jpg"
+                alt="Detalii din interiorul cafenelei"
+              />
+              <figcaption>
+                <h3>Relaxare</h3>
+                <p>Atmosferă caldă pentru pauze liniștite și momente plăcute.</p>
+                <a class="home-gallery-link" href="galerie.html">Vezi mai mult</a>
+              </figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="img/galeria/foto2.jpg" alt="Cafea servită pe masă" />
+              <figcaption>
+                <h3>Cafea de autor</h3>
+                <p>Băuturi pregătite cu grijă, gust echilibrat și aromă intensă.</p>
+                <a class="home-gallery-link" href="galerie.html">Vezi mai mult</a>
+              </figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img
+                src="img/galeria/foto3.jpg"
+                alt="Colț cozy în PLAY ROOM ARTICHOKE"
+              />
+              <figcaption>
+                <h3>Ambianță</h3>
+                <p>Loc perfect pentru întâlniri cu prietenii sau timp pentru tine.</p>
+                <a class="home-gallery-link" href="galerie.html">Vezi mai mult</a>
+              </figcaption>
+            </figure>
+          </div>
         </div>
       </section>
 
@@ -397,8 +487,9 @@
           <nav class="footer-menu" aria-label="Linkuri rapide">
             <a href="index.html">Acasă</a>
             <a href="galerie.html">Galerie</a>
-            <a href="produse-servicii.html">Produse</a>
-            <a href="rezervari.html">Rezervări</a>
+            <a href="produse.html">Produse</a>
+            <a href="servicii.html">Servicii</a>
+            <a href="reguli.html">Reguli</a>
             <a href="contact.html">Contacte</a>
           </nav>
         </div>
@@ -408,11 +499,11 @@
           <div class="footer-contacts-list">
             <p>
               <strong>Adresă</strong>
-              <span>str. Pușkin, nr. 10, Sankt Petersburg</span>
+              <span>Orașul Cahul, strada 31 August 1989, 4j</span>
             </p>
             <p>
               <strong>Telefon</strong>
-              <span>+7 (999) 123-45-67</span>
+              <span>069883294</span>
             </p>
             <p>
               <strong>Program</strong>
@@ -439,7 +530,7 @@
             </a>
             <a
               class="footer-icon-btn"
-              href="https://www.instagram.com/"
+              href="https://www.instagram.com/playroomcopii?igsh=MWZrenc4bDl2cGZncA%3D%3D"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
@@ -465,7 +556,7 @@
             </a>
             <a
               class="footer-icon-btn"
-              href="https://t.me/ArtichokeCH_BOT"
+              href="https://t.me/playroom_kidsroom"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Telegram"
@@ -478,7 +569,7 @@
           <div class="footer-actions" aria-label="Hartă">
             <a
               class="footer-icon-btn footer-map-btn"
-              href="https://maps.google.com/?q=str.+Pu%C8%99kin,+10,+Sankt+Petersburg"
+              href="https://maps.google.com/?q=Ora%C8%99ul+Cahul,+strada+31+August+1989,+4j"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Vezi pe hartă"
@@ -495,7 +586,7 @@
       </div>
 
       <div class="container copyright">
-        © 2026 Cafea și Confort. Toate drepturile rezervate.
+        © 2026 SRL Play Room Artichoke SRL. Toate drepturile rezervate.
       </div>
       <p class="container site-disclaimer">
         Acest website a fost realizat în cadrul competiției „Tekwill Junior
